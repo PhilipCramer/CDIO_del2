@@ -1,4 +1,46 @@
-@startuml
+ @startuml DomainDiagram
+skinparam style strictuml
+hide empty members
 
+class "Player" as Player {
+    name
+    account
+}
+
+class "Account" as Account {
+    balance
+}
+
+class "Dice" as Dice {
+    faceValue
+}
+
+class "Dicegame" as Game {
+
+}
+class "Board" as Board {
+    
+}
+class "Fields" as Fields {
+     
+}
+class "Effect" as Effects {
+
+}
+Game "1" -- "2" Player : Plays <
+
+Game "1" -- "2" Dice : Is played with >
+
+Game "1" -- "1" Board : Is played on >
+
+Board "1" -- "2..12" Fields : contains >
+
+Player "1" -- "1" Account : Owns >
+
+Player "1" -- "2" Dice : Throws >
+
+Player "1" -- "1" Fields : Moves to >
+
+Fields "1" -- "*" Effects : Contains 
 
 @enduml
