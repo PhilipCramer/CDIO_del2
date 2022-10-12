@@ -1,4 +1,4 @@
- @startuml DomainDiagram
+@startuml DomainDiagram
 skinparam style strictuml
 hide empty members
 
