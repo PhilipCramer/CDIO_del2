@@ -15,14 +15,14 @@ class "Player" as Player {
     account : Account
 
     setPlayerName()
-    getPlayerName()
+    getPlayerName() : String
 
 }
 
 class "Account" as Account {
     balance : int
 
-    setNewBalance() : int
+    setNewBalance()
     getCurrentBlance() : int
     balanceCheck() : boolean
 }
