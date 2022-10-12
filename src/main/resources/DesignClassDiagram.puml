@@ -27,6 +27,10 @@ class "Account" as Account {
     balanceCheck() : boolean
 }
 
+class "DieCup" as Diecup {
+
+}
+
 class "Dice" as Dice {
     faceValue : int
 
@@ -36,7 +40,6 @@ class "Dice" as Dice {
 class "Board" as Board {
     fields : Fields
 
-    getPosition() : int
     movePlayer() : int
 }
 
@@ -51,6 +54,6 @@ Player "1" -- "1" Account : Owns >
 Game "1" -- "2" Player 
 Game "1" -- "1" Board
 Board "1" -- "2..12" Field
-Game "1" -- "2" Dice
-
+Game "1" -- "1" Diecup
+Diecup "1" -- "2" Dice
 @enduml
