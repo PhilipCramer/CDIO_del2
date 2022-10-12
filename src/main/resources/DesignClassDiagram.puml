@@ -1,0 +1,56 @@
+@startuml ClassDiagram
+skinparam style strictuml
+
+class "Game" as Game {
+    Board : Board
+    Dice1 : Dice
+    Dice2 : Dice
+    Player1 : Player
+    Player2 : Player
+
+    main()
+}
+class "Player" as Player {
+    playerName : String
+    account : Account
+
+    setPlayerName()
+    getPlayerName()
+
+}
+
+class "Account" as Account {
+    balance : int
+
+    setNewBalance() : int
+    getCurrentBlance() : int
+    balanceCheck() : boolean
+}
+
+class "Dice" as Dice {
+    faceValue : int
+
+    rollDice() : int
+}
+
+class "Board" as Board {
+    fields : Fields
+
+    getPosition() : int
+    movePlayer() : int
+}
+
+class "Fields" as Field {
+    fieldNumber : int
+
+    getEffect() : int
+    getExtraTurn() : boolean
+}
+
+Player "1" -- "1" Account : Owns >
+Game "1" -- "2" Player 
+Game "1" -- "1" Board
+Board "1" -- "2..12" Field
+Game "1" -- "2" Dice
+
+@enduml
