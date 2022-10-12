@@ -1,2 +1,25 @@
-@startuml
+@startuml SequenceDiagram
+actor Player1
+actor Player2
+participant DiceGame
+
+Player1 -> DiceGame : Starts Game
+Player1 -> DiceGame : Creates own player
+Player2 -> DiceGame : Creates own player
+loop Until Player hits 3000
+Player1 -> DiceGame : Throws Dice
+DiceGame -> DiceGame : Moves Player
+DiceGame -> DiceGame : Calculates new score
+Player1 <-- DiceGame : Recieves effect
+Player2 -> DiceGame : Throws Dice
+DiceGame -> DiceGame : Moves Player
+DiceGame -> DiceGame : Calculates new score
+Player2 <-- DiceGame : Recieves effect
+
+end
+DiceGame -> DiceGame : Calculates winner
+note left
+Announces Winner on screen
+end note
+
 @enduml
