@@ -1,0 +1,30 @@
+@startuml UseCaseDiagram
+left to right direction
+actor "Player" as p
+rectangle "Dice Game" {
+  usecase "Start Game" as UC1
+  usecase "Create Player" as UC2
+  usecase "Throw Dice" as UC3
+  usecase "Move to field" as UC4
+  usecase "Recieve effect" as UC5
+  usecase "Lose money" as UC6
+  usecase "Recieve money" as UC7
+  usecase "Gain an extra turn" as UC8
+  usecase "View Score" as UC9
+  usecase "Restart Game" as UC10
+  usecase "Exit Game" as UC11
+}
+p -> UC1
+UC1 ..> UC2 : include
+UC1 .> UC3 : include
+UC3 .> UC4 : include
+UC4 ..> UC5 : include
+UC5 <.. UC7 : extends
+UC5 <.. UC6 : extends
+UC6 <. UC8 : extends
+p -> UC9
+UC9 <... UC5 : include
+p -> UC10
+UC10 .> UC2 : extends
+p -> UC11
+@enduml
