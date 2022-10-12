@@ -40,7 +40,7 @@ class "Dice" as Dice {
 
 class "Board" as Board {
     fields : Fields
-
+    board : Fields[]
     movePlayer() : int
 }
 
