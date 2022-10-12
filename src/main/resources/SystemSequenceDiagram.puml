@@ -1,2 +1,37 @@
-@startuml
+@startuml SystemSequenceDiagram
+title "Game start & first turn"
+actor User
+participant DiceGame
+participant ": Player"
+participant ": Account"
+participant ": DieCup"
+participant ": Dice"
+participant ": Board"
+participant ": Fields"
+
+User -> DiceGame : Starts game
+DiceGame --> User : Asks for player name
+User -> DiceGame : Writes input
+DiceGame -> ": Player" : Creates Player 
+": Player" -> ": Account" : Creates Account
+DiceGame -> ": DieCup" : Creates Diecup
+": DieCup" -> ": Dice" : Creates Dice
+DiceGame -> ": Board" : Creates Board
+": Board" -> ": Fields" : Creates Fields
+DiceGame --> User : Askes user to throw the dice
+User -> DiceGame : Throws dice
+DiceGame -> ": DieCup" : Asks for total dice value
+": DieCup" -> ": Dice" : Gets dice value
+": DieCup" -> ": DieCup" : Calculates total value
+": DieCup" --> DiceGame : Returns total value
+DiceGame -> ": Board" : Sends total value
+": Board" -> ": Fields" : Moves player
+": Fields" --> DiceGame : Returns effect
+DiceGame -> ": Player" : Send effects
+": Player" -> ": Account" : Changes balance
+": Account" --> ": Player" : Return new balance
+": Player" --> DiceGame : Return new balance
+DiceGame -> User : Returns new standing
+
+
 @enduml
