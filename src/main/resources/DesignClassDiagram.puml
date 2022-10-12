@@ -3,8 +3,7 @@ skinparam style strictuml
 
 class "Game" as Game {
     Board : Board
-    Dice1 : Dice
-    Dice2 : Dice
+    Diecup : Diecup
     Player1 : Player
     Player2 : Player
 
@@ -28,7 +27,9 @@ class "Account" as Account {
 }
 
 class "DieCup" as Diecup {
+    totalValue : int
 
+    getTotalValue() : int
 }
 
 class "Dice" as Dice {
