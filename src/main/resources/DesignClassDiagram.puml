@@ -67,7 +67,4 @@ Game *--> "1" Board
 Board  *--> "11" Field
 Game  *--> "1" Diecup
 Diecup *--> "2" Dice
-TurnController *--> "2" Player
-TurnController *--> "1" Board
-TurnController <--* "1" Game
 @enduml
