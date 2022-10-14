@@ -22,7 +22,7 @@ UC5 <.. UC7 : <<extends>>
 UC5 <.. UC6 : <<extends>>
 UC5 <. UC8 : <<extends>>
 UC12 ..> UC9 : <<include>>
-UC12 ...> UC5 : <<include>>
+UC4 ...> UC5 : <<include>>
 p --> UC10
 UC10 <.. UC2 : <<extends>>
 p --> UC11
