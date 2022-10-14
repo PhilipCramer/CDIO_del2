@@ -4,13 +4,14 @@ skinparam style strictuml
 class "Game" as Game {
     board : Board
     diecup : Diecup
+    turncontroller : TurnController
     player1 : Player
     player2 : Player
 
 }
 class "TurnController" as TurnController {
     activePlayer : Player
-    
+
 }
 class "Player" as Player {
     playerName : String
