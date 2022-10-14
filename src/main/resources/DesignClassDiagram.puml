@@ -2,12 +2,12 @@
 skinparam style strictuml
 
 class "Game" as Game {
-    Board : Board
-    Diecup : Diecup
-    Player1 : Player
-    Player2 : Player
+    board : Board
+    diecup : Diecup
+    player1 : Player
+    player2 : Player
+    activePlayer : Player
 
-    main()
 }
 class "Player" as Player {
     playerName : String
@@ -15,46 +15,55 @@ class "Player" as Player {
 
     setPlayerName()
     getPlayerName() : String
+    addValue (int value)
 
 }
 
 class "Account" as Account {
     balance : int
 
-    setNewBalance()
-    getCurrentBlance() : int
+    addValue(int value)
+    getBalance() : int
     balanceCheck() : boolean
 }
+note left
+    Balance >= 0
+    end note
 
 class "DieCup" as Diecup {
-    totalValue : int
-
+    die : Dice[2]
+    
+    rollDie()
+    getDiceValue() : int
     getTotalValue() : int
 }
 
 class "Dice" as Dice {
     faceValue : int
 
-    rollDice() : int
+    getFaceValue () : int
+    rollDice()
 }
 
 class "Board" as Board {
-    fields : Fields
-    board : Fields[]
-    movePlayer() : int
+    board : Field[12]
+    
+    getField(int fieldNumber) : Field
 }
 
-class "Fields" as Field {
-    fieldNumber : int
+class "Field" as Field {
+    effect : int
+    extraTurn : boolean
 
-    getEffect() : int
+    applyEffect(Player) : boolean
     getExtraTurn() : boolean
 }
 
-Player "1" -- "1" Account : Owns >
-Game "1" -- "2" Player 
-Game "1" -- "1" Board
-Board "1" -- "2..12" Field
-Game "1" -- "1" Diecup
-Diecup "1" -- "2" Dice
+
+Player *--> "1" Account
+Game *--> "2" Player 
+Game *--> "1" Board
+Board  *--> "11" Field
+Game  *--> "1" Diecup
+Diecup *--> "2" Dice
 @enduml

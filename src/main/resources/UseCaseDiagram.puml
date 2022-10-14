@@ -4,6 +4,7 @@ actor "Player" as p
 rectangle "Dice Game" {
   usecase "Start Game" as UC1
   usecase "Create Player" as UC2
+  usecase "Take turn" as UC12
   usecase "Throw Dice" as UC3
   usecase "Move to field" as UC4
   usecase "Recieve effect" as UC5
@@ -14,17 +15,18 @@ rectangle "Dice Game" {
   usecase "Restart Game" as UC10
   usecase "Exit Game" as UC11
 }
-p -> UC1
-UC1 ..> UC2 : include
-UC1 .> UC3 : include
-UC3 .> UC4 : include
-UC4 ..> UC5 : include
-UC5 <.. UC7 : extends
-UC5 <.. UC6 : extends
-UC6 <. UC8 : extends
-p -> UC9
-UC9 <... UC5 : include
-p -> UC10
-UC10 .> UC2 : extends
-p -> UC11
+p --> UC1
+UC1 ..> UC2 : <<include>> 
+UC12 .> UC4 : <<include>>
+UC5 <.. UC7 : <<extends>>
+UC5 <.. UC6 : <<extends>>
+UC5 <. UC8 : <<extends>>
+UC12 ..> UC9 : <<include>>
+UC12 ...> UC5 : <<include>>
+p --> UC10
+UC10 <.. UC2 : <<extends>>
+p --> UC11
+p --> UC12
+UC12 ..> UC3 : <<include>>
+
 @enduml
