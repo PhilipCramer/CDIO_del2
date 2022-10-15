@@ -30,7 +30,7 @@ public class Board {
         }
     }
 
-    public int getEffect(){
+    public int getEffect(int DiceRollSum){
         //returns the effect from the field
         return 0;
     }
