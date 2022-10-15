@@ -1,7 +1,7 @@
 public class Board {
     Field[] Board;
 
-    enum FieldNames{
+    private enum FieldNames{
         START,
         TOWER,
         CRATER,
