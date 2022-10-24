@@ -9,9 +9,8 @@ public class DieCup {
 
     /**
      * Throws the dice
-     * @return An array of dice values
      */
-    public int[] throwDice() {
+    public void throwDice() {
         //Makes a Cup variable as an array with DieCount length.
         DieCup Cup = new DieCup(DieCount);
         //Makes a variable called "generateDie" as a new Die() class.
@@ -20,8 +19,19 @@ public class DieCup {
         for (int i = 0; i < DieCount; i++) {
             Cup.DiceArray[i] = generateDie.Throw();
         }
+    }
 
-        //Returns an array with all the die values.
-        return Cup.DiceArray;
+    /**
+     * Gets the total sum of the dice values
+     * @return Total sum of the dice values
+     */
+    public int getTotalValue() {
+        int sum = 0;
+        //Iterates through each element in DiceArray.
+        for (int i : DiceArray) {
+            //Adds the dice value to the total sum.
+            sum += i;
+        }
+        return sum;
     }
 }
