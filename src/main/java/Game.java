@@ -1,9 +1,15 @@
-
-//import of the java scanner
 import java.util.Scanner;
+//imports java scanner
 public class Game {
-    public Game() {
-        Scanner sc = new Scanner(System.in);
+    //declares a scanner variable
+    Scanner scanner;
+    
+    /**
+     * 
+     * @param scanner takes a scanner as input to take player inputs.
+     */
+    public Game(Scanner scanner) {
+        Scanner sc = scanner;
 
         // initialize board
         Board board = new Board();
@@ -99,8 +105,6 @@ public class Game {
                 }
                 // Tell the player they've won
                 System.out.println(currentPlayer.getPlayerName() + " congratulations, you've won!");
-
-                // insert possibility to restart game - and exit manually.
                 break;
             }
             // check for extra turn
