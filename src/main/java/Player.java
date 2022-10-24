@@ -31,11 +31,19 @@ public class Player {
     public void setBalance(int value){
         this.account.addValue(value);
     }
+
+    /**
+     * For reading value of player balance
+     * @return returns the players balance as integer
+     */
     public int getPlayerBalance(){
         return this.account.getBalance();
     }
 
-
+    /**
+     * check if the player's account has reach the win condition
+     * @return returns true if the player has 3000 points
+     */
     public boolean checkPlayerBalance(){
         return this.account.balanceCheck();
     }
