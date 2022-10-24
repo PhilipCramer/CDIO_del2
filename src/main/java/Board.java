@@ -53,9 +53,11 @@ public class Board {
 
         //checks if the user gains or loses point and changes accordingly
         if(getEffect(DiceRollSum) < 0){
-            str += " you lose " + Math.abs(getEffect(DiceRollSum)) + " points.";
-        } else{
-            str += " you gain " + Math.abs(getEffect(DiceRollSum)) + " points.";
+            str += ", you lose " + Math.abs(getEffect(DiceRollSum)) + " points.";
+        } else if(getEffect(DiceRollSum) == 0){
+            str += ", it's peaceful and quiet but with 0 effect.";
+        }else{
+            str += ", you gain " + Math.abs(getEffect(DiceRollSum)) + " points.";
         }
 
         // Adds the roll again text if user lands at the Werewall
