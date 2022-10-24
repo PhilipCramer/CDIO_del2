@@ -15,13 +15,7 @@ public class Player {
     }
     // setPleyerName()
 
-    /**
-     * Player gets name set.
-     * @param Name PlayerName is set to Name
-     */
-    public void setPlayerName(String Name) {
-         playerName = Name;
-    }
+
 
     // getPlayerName(): String
     public String getPlayerName(){
