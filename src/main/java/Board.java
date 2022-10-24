@@ -1,6 +1,8 @@
 public class Board {
     Field[] Board;
 
+
+    //Enumerator containing the desired Field names
     private enum FieldNames{
         START,
         TOWER,
@@ -22,6 +24,7 @@ public class Board {
      */
     public Board(){
         int i = 0;
+        //Iterates over the enumerator instantiating the fields and assigning names
         for(FieldNames fn : FieldNames.values()){
             Board[i] = new Field();
             // board[i].setName(fn);
@@ -45,7 +48,7 @@ public class Board {
      * @return returns the action as text corresponding to the field
      */
     public String getFieldtext(int DiceRollSum){
-        String name = Board[DiceRollSum +1].getName().replace("_", " ").toLowerCase();
+        String name = Board[DiceRollSum +1].getName().replace("_", " ").toLowerCase(); //+1 to account for array 0 indexing
         String str = "You have arrived at " + name;
 
         //checks if the user gains or loses point and changes accordingly
