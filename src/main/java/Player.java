@@ -1,12 +1,10 @@
-import java.util.Scanner;
-
 public class Player {
 
     // playerName: string
-    String playerName;
+    private String playerName;
 
     // account : Account
-    Account account = new Account();
+    private Account account = new Account();
 
     // setPleyerName()
 
