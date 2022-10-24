@@ -14,8 +14,8 @@ public class Game {
         // initialize board
         Board board = new Board();
 
-        // initialize dicecup
-        DiceCup diceCup = new DiceCup();
+        // initialize dicecup with 2 dice
+        DieCup diceCup = new DieCup(2);
 
         // welcome players, ask for name for player 1
         System.out.println("Welcome!\nPlease enter the name of player one:");
