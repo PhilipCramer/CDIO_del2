@@ -1,7 +1,7 @@
 public class DieCup {
     private int[] DiceArray;
-    //DieCount can be changed to any amount if needed.
-    private int DieCount = 2;
+    private int DieCount = 2; //DieCount can be changed to any amount if needed.
+
     //A contructer that makes an Array of int.
     DieCup(int DieCount) {
         DiceArray = new int[DieCount];
