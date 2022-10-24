@@ -2,15 +2,24 @@ import java.util.Scanner;
 
 public class Player {
 
-    System.out.println("Please enter the player name");
-    Scanner playerName = new Scanner(System.in);
-    String name = " ";
-    player = new Player(name);
-
-
     // playerName: string
+    String playerName;
+
     // account : Account
+    Account account = new Account();
+
     // setPleyerName()
+    public void setPlayerName(String Name) {
+         playerName = Name;
+    }
+
     // getPlayerName(): String
+    public String getPlayerName(){
+        return playerName;
+    }
+
     // addValue (int value)
+    public void addValue(int value){
+        account.addValue(value);
+    }
 }
