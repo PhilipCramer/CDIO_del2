@@ -29,9 +29,14 @@ public class Player {
      * @param value Account gets the ablility to get added value.
      */
     public void setBalance(int value){
-        account.addValue(value);
+        this.account.addValue(value);
     }
     public int getPlayerBalance(){
         return this.account.getBalance();
+    }
+
+
+    public boolean checkPlayerBalance(){
+        return this.account.balanceCheck();
     }
 }
