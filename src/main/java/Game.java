@@ -69,7 +69,7 @@ public class Game {
                 if (currentPlayer == p1) {
                     System.out.println(currentPlayer.getPlayerName()
                             + " congratulations you've hit the threshold with a balance of "
-                            + currentPlayer.getBalance() + "!");
+                            + currentPlayer.getPlayerBalance() + "!");
                     System.out.println(
                             "But because you are player one, player two will get a last turn to see if they can draw the game.");
                     currentPlayer = p2;
@@ -93,11 +93,11 @@ public class Game {
                     // apply effect
                     currentPlayer.setBalance(board.getFieldEffect(diceCup.getTotalValue()));
 
-                    if (p2.getBalance() < 3000) {
+                    if (p2.getPlayerBalance() < 3000) {
                         // Tell player one that they've won
                         System.out.println("Congratulations " + p1.getPlayerName() + " you've won!\n"
-                                + p2.getPlayerName() + " loses the game with a balance of " + p2.getBalance());
-                    } else if (p2.getBalance() >= 3000) {
+                                + p2.getPlayerName() + " loses the game with a balance of " + p2.getPlayerBalance());
+                    } else if (p2.getPlayerBalance() >= 3000) {
                         // Tell that it is a draw
                         System.out.println("The game is a draw!\n" + p2.getPlayerName()
                                 + " managed to reach the threshold of 3000 on their last turn.");
