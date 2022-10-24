@@ -1,13 +1,9 @@
 @startuml ClassDiagram
 skinparam style strictuml
 
-class "Game" as Game {
-    board : Board
-    diecup : Diecup
-    activePlayer : Player
-    player1 : Player
-    player2 : Player
-
+class "GameControl" as GameControl {
+    
+    game()
 }
 
 class "Player" as Player {
@@ -62,8 +58,17 @@ class "Field" as Field {
     getExtraTurn() : boolean
 }
 
+class "Game" as Game{
+    board : Board
+    diecup : Diecup
+    activePlayer : Player
+    player1 : Player
+    player2 : Player
+}
+
 
 Player *--> "1" Account
+GameControl *--> "1" Game
 Game *--> "2" Player 
 Game *--> "1" Board
 Board  *--> "11" Field
