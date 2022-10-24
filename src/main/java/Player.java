@@ -1,7 +1,7 @@
 public class Player {
 
 
-    private String playerName;
+    private final String playerName;
 
     private Account account;
 
