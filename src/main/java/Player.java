@@ -28,7 +28,10 @@ public class Player {
      * Value is the amount of points the player lands on.
      * @param value Account gets the ablility to get added value.
      */
-    public void addValue(int value){
+    public void setBalance(int value){
         account.addValue(value);
+    }
+    public int getPlayerBalance(){
+        return this.account.getBalance();
     }
 }
