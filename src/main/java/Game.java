@@ -60,10 +60,10 @@ public class Game {
             System.out.println(board.getFieldText(diceCup.getTotalValue()));
 
             // apply effect
-            currentPlayer.setBalance(board.getFieldEffect(diceCup.getTotalValue()));
+            currentPlayer.setPlayerBalance(board.getFieldEffect(diceCup.getTotalValue()));
 
             // check if player won
-            boolean winner = currentPlayer.balanceCheck();
+            boolean winner = currentPlayer.checkPlayerBalance();
             if (winner == true) {
                 // insert nested if statement, if check for round equality is neccersary
                 if (currentPlayer == p1) {
@@ -91,7 +91,7 @@ public class Game {
                     System.out.println(board.getFieldText(diceCup.getTotalValue()));
 
                     // apply effect
-                    currentPlayer.setBalance(board.getFieldEffect(diceCup.getTotalValue()));
+                    currentPlayer.setPlayerBalance(board.getFieldEffect(diceCup.getTotalValue()));
 
                     if (p2.getPlayerBalance() < 3000) {
                         // Tell player one that they've won

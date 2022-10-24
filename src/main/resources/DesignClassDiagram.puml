@@ -10,9 +10,10 @@ class "Player" as Player {
     playerName : String
     account : Account
 
-    setPlayerName()
     getPlayerName() : String
-    addValue (int value)
+    setPlayerBalance (int value)
+    getPlayerBalance () : int
+    checkPlayerBalance () : boolean
 
 }
 
@@ -30,16 +31,16 @@ note left
 class "DieCup" as Diecup {
     die : Dice[2]
     
-    rollDie()
+    throwDice()
     getDiceValue() : int
     getTotalValue() : int
 }
 
-class "Dice" as Dice {
-    faceValue : int
+class "Die" as Dice {
+    dieMin : int
+    dieMax : int
 
-    getFaceValue () : int
-    rollDice()
+    throw()
 }
 
 class "Board" as Board {
