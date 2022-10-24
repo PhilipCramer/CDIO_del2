@@ -1,5 +1,5 @@
 public class Board {
-    Field[] Board;
+    Field[] board;
 
 
     //Enumerator containing the desired Field names
@@ -33,8 +33,9 @@ public class Board {
         int i = 0;
         //Iterates over the enumerator instantiating the fields and assigning names
         for(FieldNames fn : FieldNames.values()){
-            Board[i] = new Field();
+            board[i] = new Field();
             // board[i].setName(fn);
+
             i++;
         }
     }
@@ -44,7 +45,7 @@ public class Board {
      * @param DiceRollSum enter the sum of the rolled diced.
      * @return returns the integer effect to be further processed
      */
-    public int getEffect(int DiceRollSum){
+    public int getFieldEffect(int DiceRollSum){
         //returns the effect from the field
         return 0;
     }
@@ -55,16 +56,16 @@ public class Board {
      * @return returns the action as text corresponding to the field
      */
     public String getFieldText(int DiceRollSum){
-        String name = Board[DiceRollSum +1].getName().replace("_", " ").toLowerCase(); //+1 to account for array 0 indexing
+        String name = board[DiceRollSum +1].getName().replace("_", " ").toLowerCase(); //+1 to account for array 0 indexing
         String str = "You have arrived at " + name;
 
         //checks if the user gains or loses point and changes accordingly
-        if(getEffect(DiceRollSum) < 0){
-            str += ", you lose " + Math.abs(getEffect(DiceRollSum)) + " points.";
-        } else if(getEffect(DiceRollSum) == 0){
+        if(getFieldEffect(DiceRollSum) < 0){
+            str += ", you lose " + Math.abs(getFieldEffect(DiceRollSum)) + " points.";
+        } else if(getFieldEffect(DiceRollSum) == 0){
             str += ", it's peaceful and quiet but with 0 effect.";
         }else{
-            str += ", you gain " + Math.abs(getEffect(DiceRollSum)) + " points.";
+            str += ", you gain " + Math.abs(getFieldEffect(DiceRollSum)) + " points.";
         }
 
         // Adds the roll again text if user lands at the Werewall
