@@ -1,11 +1,18 @@
 public class Player {
 
-    // playerName: string
+
     private String playerName;
 
-    // account : Account
-    private Account account = new Account();
+    private Account account;
 
+    /**
+     * Player constructor
+     * @param PlayerName enter the desired name for the player
+     */
+    public Player(String PlayerName){
+        playerName = PlayerName;
+        account = new Account();
+    }
     // setPleyerName()
 
     /**
