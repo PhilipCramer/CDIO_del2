@@ -34,7 +34,7 @@ public class Board {
 
     /**
      *
-     * @param DiceRollSum
+     * @param DiceRollSum enter the sum of the rolled diced.
      * @return returns the integer effect to be further processed
      */
     public int getEffect(int DiceRollSum){
