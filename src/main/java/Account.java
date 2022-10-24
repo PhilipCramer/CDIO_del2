@@ -35,7 +35,11 @@ public class Account {
         return balance;
     }
 
+    /**
+     *
+     * @return Boolean True if balance is equal to or grater than 3000.
+     */
     public boolean balanceCheck() {
-        return true;
+        return balance >= 3000;
     }
 }
