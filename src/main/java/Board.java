@@ -4,18 +4,25 @@ public class Board {
 
     //Enumerator containing the desired Field names
     private enum FieldNames{
-        START,
-        TOWER,
-        CRATER,
-        PALACE_GATES,
-        COLD_DESERT,
-        WALLED_CITY,
-        MONASTERY,
-        BLACK_CAVE,
-        HUTS_IN_THE_MOUNTAIN,
-        THE_WEREWALL,
-        THE_PIT,
-        THE_GOLDMINE
+        START (0, false),
+        TOWER (250, false),
+        CRATER (-100, false),
+        PALACE_GATES (100, false),
+        COLD_DESERT (-20, false),
+        WALLED_CITY (180, false),
+        MONASTERY (0, false),
+        BLACK_CAVE (-70, false),
+        HUTS_IN_THE_MOUNTAIN (60, false),
+        THE_WEREWALL (-80, true),
+        THE_PIT (-50, false),
+        THE_GOLDMINE (650, false);
+
+        private final int effect;
+        private final boolean extraTurn;
+        FieldNames(int effect, boolean ExtraTurn){
+            this.effect = effect;
+            this.extraTurn = ExtraTurn;
+        }
     }
 
     /**
