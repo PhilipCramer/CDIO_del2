@@ -48,8 +48,9 @@ class "Dice" as Dice {
 
 class "Board" as Board {
     board : Field[12]
-    
-    getField(int fieldNumber) : Field
+
+    getEffect() : Integer
+    getFieldtext() : String
 }
 
 class "Field" as Field {
