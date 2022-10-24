@@ -43,11 +43,11 @@ public class Board {
     }
 
     /**
-     *
+     * Method for getting a descriptive text correspondig to the field the player has landed on
      * @param DiceRollSum enter the sum of the rolled diced.
      * @return returns the action as text corresponding to the field
      */
-    public String getFieldtext(int DiceRollSum){
+    public String getFieldText(int DiceRollSum){
         String name = Board[DiceRollSum +1].getName().replace("_", " ").toLowerCase(); //+1 to account for array 0 indexing
         String str = "You have arrived at " + name;
 
@@ -64,7 +64,17 @@ public class Board {
         if(DiceRollSum == 10){
             str += " Roll again.";
         }
-
         return str;
+    }
+
+    /**
+     * Method for determining if the player has landed on a field that awards an extra turn
+     * @param DiceRollSum enter the sum of the rolled dice
+     * @return returns a boolean representing if the player receives an extra turn
+     */
+    public boolean getExtraTurn(int DiceRollSum){
+        if(DiceRollSum == 10){
+            return true;
+        }else return false;
     }
 }
