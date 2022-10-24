@@ -43,7 +43,7 @@ public class Board {
     }
 
     /**
-     *
+     * Method for getting a descriptive text correspondig to the field the player has landed on
      * @param DiceRollSum enter the sum of the rolled diced.
      * @return returns the action as text corresponding to the field
      */
@@ -68,7 +68,7 @@ public class Board {
     }
 
     /**
-     *
+     * Method for determining if the player has landed on a field that awards an extra turn
      * @param DiceRollSum enter the sum of the rolled dice
      * @return returns a boolean representing if the player receives an extra turn
      */
