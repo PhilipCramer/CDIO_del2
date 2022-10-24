@@ -52,7 +52,7 @@ public class Board {
         String str = "You have arrived at " + name;
 
         //checks if the user gains or loses point and changes accordingly
-        if(getEffect(DiceRollSum) > 0){
+        if(getEffect(DiceRollSum) < 0){
             str += " you lose " + Math.abs(getEffect(DiceRollSum)) + " points.";
         } else{
             str += " you gain " + Math.abs(getEffect(DiceRollSum)) + " points.";
