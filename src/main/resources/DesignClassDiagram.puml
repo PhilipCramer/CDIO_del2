@@ -51,6 +51,7 @@ class "Board" as Board {
 
     getEffect() : Integer
     getFieldtext() : String
+    getExtraTurn() : boolean
 }
 
 class "Field" as Field {
