@@ -13,7 +13,6 @@ public class Player {
         playerName = PlayerName;
         account = new Account();
     }
-    // setPleyerName()
 
 
 
