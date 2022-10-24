@@ -4,7 +4,7 @@ public class Board {
 
     //Enumerator containing the desired Field names
     private enum FieldNames{
-        START (null, false),
+        START (0, false),
         TOWER (250, false),
         CRATER (-100, false),
         PALACE_GATES (100, false),
