@@ -21,12 +21,14 @@ DiceGame -> ": Board" : Creates Board
 DiceGame --> User : Askes user to throw the dice
 User -> DiceGame : Throws dice
 DiceGame -> ": DieCup" : Asks for total dice value
-": DieCup" -> ": Dice" : Gets dice value
-": DieCup" -> ": DieCup" : Calculates total value
-": DieCup" --> DiceGame : Returns total value
-DiceGame -> ": Board" : Sends total value
-": Board" -> ": Fields" : Moves player
-": Fields" --> DiceGame : Returns effect
+": DieCup" -> ": Dice" : Throws Dice
+": Dice" -> ": Dice" : Throws Dice
+": DieCup" -> ": DieCup" : Calculate dice sum
+": DieCup" --> DiceGame : Returns dice sum
+DiceGame -> ": Board" : Moves player
+": Board" -> ": Fields" : Finds effect
+": Fields" --> ": Board" : Returns effect
+": Board" --> DiceGame : Returns effect
 DiceGame -> ": Player" : Send effects
 ": Player" -> ": Account" : Changes balance
 ": Account" --> ": Player" : Return new balance
