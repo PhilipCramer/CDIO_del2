@@ -7,7 +7,7 @@ public class DieTC3 {
     @Test
     public void Throw() {
         Die die = new Die();
-        int mynum = die.Throw();
-        assertTrue(1 <= mynum && mynum <= 6);
+        int dieValue = die.Throw();
+        assertTrue(1 <= dieValue && dieValue <= 6);
     }
 }
