@@ -1,5 +1,5 @@
 public class Account {
-    // start balance: 0
+    // start balance: 1000
     // balance:int
     // addValue(int value)
     // getBalance() :int
@@ -8,7 +8,7 @@ public class Account {
     int balance;
 
     public Account() {
-        balance = 0;
+        balance = 1000;
     }
 
     /**
