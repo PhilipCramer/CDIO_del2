@@ -104,9 +104,11 @@ public class Game {
                     }
                 }
                 // Tell the player they've won
-                System.out.println(currentPlayer.getPlayerName() + " congratulations, you've won!");
+                System.out.println(currentPlayer.getPlayerName() + " congratulations, your balance is " + currentPlayer.getPlayerBalance() + "!\nYou've won!");
                 break;
             }
+            // Tell the player their new balance
+            System.out.println("Your balance is " + currentPlayer.getPlayerBalance() + "!");
             // check for extra turn
             if (board.getExtraTurn(diceCup.getTotalValue()) == true) {
                 // Tell player they've gotten an extra turn
