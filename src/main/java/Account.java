@@ -22,14 +22,6 @@ public class Account {
     }
 
     /**
-     * Set the balance to an integer
-     * @param _balance sets balance to _balance
-     */
-    public void setBalance(int _balance) {
-        balance = _balance;
-    }
-
-    /**
      * Get balance value
      * @return current balance
      */
