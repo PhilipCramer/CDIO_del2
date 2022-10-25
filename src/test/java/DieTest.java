@@ -1,4 +1,4 @@
-import org.junit.jupiter.api.BeforeAll;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -7,7 +7,7 @@ public class DieTest {
 
     private static Die die;
 
-    @BeforeAll
+    @BeforeClass
     public static void createDie() {
         die = new Die();
     }
