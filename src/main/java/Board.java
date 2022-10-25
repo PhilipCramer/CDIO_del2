@@ -3,7 +3,7 @@ public class Board {
 
 
     //Enumerator containing the desired Field names
-    private enum FieldNames{
+    private enum BoardLayout {
         START (0, false),
         TOWER (250, false),
         CRATER (-100, false),
@@ -19,7 +19,7 @@ public class Board {
 
         private final int effect;
         private final boolean extraTurn;
-        FieldNames(int effect, boolean ExtraTurn){
+        BoardLayout(int effect, boolean ExtraTurn){
             this.effect = effect;
             this.extraTurn = ExtraTurn;
         }
@@ -32,9 +32,9 @@ public class Board {
     public Board(){
         int i = 0;
         //Iterates over the enumerator instantiating the fields and assigning names
-        for(FieldNames fn : FieldNames.values()){
+        for(BoardLayout bL : BoardLayout.values()){
             board[i] = new Field();
-            // board[i].setName(fn);
+            // board[i].setName(bL);
 
             i++;
         }
