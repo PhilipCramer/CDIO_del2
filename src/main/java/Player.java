@@ -43,7 +43,7 @@ public class Player {
      * check if the player's account has reach the win condition
      * @return returns true if the player has 3000 points
      */
-    public boolean checkPlayerBalance(){
-        return this.account.balanceCheck();
+    public boolean checkPlayerBalance(int amount){
+        return this.account.balanceCheck(amount);
     }
 }

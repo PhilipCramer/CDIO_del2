@@ -8,18 +8,18 @@ public class AccountTest {
     @BeforeClass
     public void createAccount() {
         account = new Account();
-        assertEquals(1000, account.balance);
+        assertEquals(1000, account.getBalance());
     }
 
     @Test
     public void TC1() {
         account.addValue(-500);
-        assertEquals(500, account.balance);
+        assertEquals(500, account.getBalance());
     }
    
     @Test
     public void TC2(){
         account.addValue(-1001);
-        assertEquals(0, account.balance);
+        assertEquals(0, account.getBalance());
     }
 }

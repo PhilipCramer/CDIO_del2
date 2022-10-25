@@ -5,7 +5,7 @@ public class Account {
     // getBalance() :int
     // balanceCheck() : boolean
 
-    int balance;
+    private int balance;
 
     public Account() {
         balance = 1000;
@@ -30,10 +30,11 @@ public class Account {
     }
 
     /**
-     * Checks if the balance is 3000 or more
-     * @return Boolean - True if balance is equal to or grater than 3000.
+     * Checks if the balance at least the amount
+     * @param amount - the amount to check against
+     * @return Boolean - True if balance is equal or greater than the amount.
      */
-    public boolean balanceCheck() {
-        return balance >= 3000;
+    public boolean balanceCheck(int amount) {
+        return balance >= amount;
     }
 }

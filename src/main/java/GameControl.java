@@ -25,5 +25,7 @@ public class GameControl {
                 System.out.println("Thank you for playing!");
             }
         } while (play);
+
+        sc.close();
     }
 }
