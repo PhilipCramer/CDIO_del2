@@ -16,7 +16,9 @@ public class Account {
      * @param Int added to the current balance
      */
     public void addValue(int Int) {
-        balance += Int;
+        //Sets balance to the highest value of 0 and balance + Int
+        //so that balance is never negative
+        balance = Math.max(balance + Int, 0);
     }
 
     /**
