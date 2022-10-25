@@ -18,6 +18,7 @@ DiceGame -> ": DieCup" : Creates Diecup
 ": DieCup" -> ": Dice" : Creates Dice
 DiceGame -> ": Board" : Creates Board
 ": Board" -> ": Fields" : Creates Fields
+loop
 DiceGame --> User : Askes user to throw the dice
 User -> DiceGame : Throws dice
 DiceGame -> ": DieCup" : Asks for total dice value
@@ -31,9 +32,18 @@ DiceGame -> ": Board" : Moves player
 ": Board" --> DiceGame : Returns effect
 DiceGame -> ": Player" : Send effects
 ": Player" -> ": Account" : Changes balance
-": Account" --> ": Player" : Return new balance
-": Player" --> DiceGame : Return new balance
-DiceGame -> User : Returns new standing
+DiceGame -> ": Player" : Checks if player has won
+": Player" -> ": Account" : Checks if player has won
+": Account" -> ": Account" : Checks if player has won
+": Account" -> ": Player" : Returns boolean winner check
+": Player" -> DiceGame : Returns boolean winnercheck
+DiceGame -> ": Player" : Asks for new balance
+": Player" -> ": Account" : Retrieves new balance
+": Account" --> ": Player" : Returns new balance
+": Player" --> DiceGame : Returns new balance
+DiceGame -> User : Returns new balance
+end
+DiceGame ->
 
 
 @enduml
