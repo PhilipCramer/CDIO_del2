@@ -54,11 +54,6 @@ public class Game {
             // tell player their dice result
             System.out.println("You got a " + diceCup.getTotalValue());
 
-            // uncomment below if player should also know the individual dice and the total
-            // dice value
-            // System.out.print("you got a " + diceCup.getDiceValue() + " and " +
-            // diceCup.getDiceValue() + " = " + diceCup.getTotalValue());
-
             // tell the player where they landed
             System.out.println(board.getFieldText(diceCup.getTotalValue()));
 
