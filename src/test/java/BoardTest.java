@@ -22,7 +22,7 @@ public class BoardTest {
     @Test
     public void getFieldText() {
         String expectedVal = "You have arrived at the monastery, it's peaceful and quiet but with 0 effect.";
-        String actualVal = board.getFieldText(5);
+        String actualVal = board.getFieldText(7);
         Assert.assertEquals(actualVal, expectedVal);
     }
 
