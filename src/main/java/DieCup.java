@@ -4,7 +4,7 @@ public class DieCup {
     private  int sum = 0; //The start sum
     //A contructer that makes an Array of int and sets the die count.
     public DieCup(int dieCount) {
-        DiceArray = new int[DieCount];
+        DiceArray = new int[dieCount];
         DieCount = dieCount;
     }
 
