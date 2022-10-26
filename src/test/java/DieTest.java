@@ -20,7 +20,7 @@ public class DieTest {
      */
     @Test
     public void TC3() {
-        //A loop that throws the die 1000 times and checks if the value is as expected.
+        //A loop that throws the die 1000000 times and checks if the value is as expected.
         for (int i = 0; i < 1000000; i++) {
             //The die is thrown and a random number is returned.
             int dieValue = die.Throw();
