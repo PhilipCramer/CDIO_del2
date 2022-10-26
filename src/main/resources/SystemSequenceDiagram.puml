@@ -1,6 +1,5 @@
 @startuml SystemSequenceDiagram
 title "Game start & first turn"
-actor User
 participant Game
 participant Game
 participant ": Player"
