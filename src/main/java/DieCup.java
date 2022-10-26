@@ -1,7 +1,7 @@
 public class DieCup {
-    private int[] DiceArray;
-    private int DieCount;
-    //A contructer that makes an Array of int and sets the die count.
+    private final int[] DiceArray;
+    private final int DieCount;
+    //A constructor that makes an Array of int and sets the die count.
     public DieCup(int dieCount) {
         DiceArray = new int[dieCount];
         DieCount = dieCount;

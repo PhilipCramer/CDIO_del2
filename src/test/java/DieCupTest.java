@@ -23,7 +23,7 @@ public class DieCupTest {
     public void TC4(){
         //Makes a new DieCup class with 2 dice.
         DieCup dieCup = new DieCup(2);
-        int numberOfRolls = 1000; // The number of rolls in total
+        int numberOfRolls = 1000000; // The number of rolls in total
         int[] results = new int[13]; // An array of the total sum 2 dice can make.
 
         //A loop that "throws" the dice and ticks up the counter that corresponds to the dice sum in the results array.
@@ -35,7 +35,7 @@ public class DieCupTest {
         System.out.println("There have been rolled:");
         //A loop that prints each value in the results array and calculates the percentage.
         for(int i = 2; i< results.length; i++) {
-            System.out.println(i + ": " + results[i] + " times, which is " + (((results[i]) * 100) / 1000.0) + "% of the rolls");
+            System.out.println(i + ": " + results[i] + " times, which is " + (((results[i]) * 100) / 1000000.0) + "% of the rolls");
         }
     }
 
