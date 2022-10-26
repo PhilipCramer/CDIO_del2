@@ -4,6 +4,9 @@
 out/
 target/
 
+# VScode
+.vscode
+
 # Package Files #
 *.jar
 *.war

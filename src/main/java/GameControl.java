@@ -15,7 +15,7 @@ public class GameControl {
             // creates a new game to run
             Game game = new Game(sc);
             // asks if the player wants to play again
-            System.out.println("Type yes to play again:");
+            System.out.println("Type yes to play again: <yes/y>\nElse press enter to exit: <enter>");
             String restart = sc.nextLine().toLowerCase();
             // restarts if correct input is typed
             if (restart.equals("yes") || restart.equals("y")) {
