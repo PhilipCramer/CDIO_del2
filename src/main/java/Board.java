@@ -44,7 +44,7 @@ public class Board {
      * @return returns the integer effect to be further processed
      */
     public int getFieldEffect(int DiceRollSum){
-        return board[DiceRollSum - 1].getEffect();
+        return board[DiceRollSum - 1].getFieldEffect();
     }
 
     /**
@@ -53,7 +53,7 @@ public class Board {
      * @return returns the action as text corresponding to the field
      */
     public String getFieldText(int DiceRollSum){
-        String name = board[DiceRollSum - 1].getName().replace("_", " ").toLowerCase(); //-1 to account for array 0 indexing
+        String name = board[DiceRollSum - 1].getFieldName().replace("_", " ").toLowerCase(); //-1 to account for array 0 indexing
         String str = "You have arrived at " + name;
 
         //checks if the user gains or loses point and changes accordingly
