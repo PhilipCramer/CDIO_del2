@@ -1,9 +1,8 @@
 @startuml ClassDiagram
-skinparam style strictuml
 
 class "GameControl" as GameControl {
     
-    game()
+
 }
 
 class "Player" as Player {
@@ -49,6 +48,8 @@ class "Board" as Board {
     getFieldtext() : String
     getExtraTurn() : boolean
 }
+enum BoardLayout{
+}
 
 class "Field" as Field {
     effect : int
@@ -71,6 +72,7 @@ Player *--> "1" Account : account
 GameControl *--> "1" Game
 Game *--> "2" Player 
 Game *--> "1" Board
+Board <-r- BoardLayout
 Board  *--> "11" Field
 Game  *--> "1" Diecup
 Diecup *--> "2" Dice
