@@ -1,39 +1,16 @@
 public class Board {
     Field[] board;
 
-
-    //Enumerator containing the desired Field names
-    enum BoardLayout {
-        START (0, false),
-        THE_TOWER (250, false),
-        THE_CRATER (-100, false),
-        THE_PALACE_GATES (100, false),
-        THE_COLD_DESERT (-20, false),
-        THE_WALLED_CITY (180, false),
-        THE_MONASTERY (0, false),
-        THE_BLACK_CAVE (-70, false),
-        THE_HUTS_IN_THE_MOUNTAIN (60, false),
-        THE_WEREWALL (-80, true),
-        THE_PIT (-50, false),
-        THE_GOLDMINE (650, false);
-
-        private final int effect;
-        private final boolean extraTurn;
-        BoardLayout(int effect, boolean ExtraTurn){
-            this.effect = effect;
-            this.extraTurn = ExtraTurn;
-        }
-    }
-
     /**
      * Constructs an array of fields based on the enumerator
      * and sets the names correspondingly
      */
     public Board(){
+        this.board = new Field[BoardLayout.values().length];
         int i = 0;
         //Iterates over the enumerator instantiating the fields and assigning names
         for(BoardLayout boardLayout : BoardLayout.values()){
-            board[i] = new Field(boardLayout.name(), boardLayout.effect, boardLayout.extraTurn);
+            this.board[i] = new Field(boardLayout.name(), boardLayout.getEffect(), boardLayout.isExtraTurn());
             i++;
         }
     }
