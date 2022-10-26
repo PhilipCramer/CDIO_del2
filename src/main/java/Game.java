@@ -2,7 +2,7 @@ import java.util.Scanner;
 //imports java scanner
 public class Game {
     //declares a scanner variable
-    Scanner scanner;
+    private Scanner sc;
     
     private final static int WINNER_SCORE = 3000;
     private final static int DIE_COUNT = 2;
@@ -11,8 +11,8 @@ public class Game {
      * 
      * @param scanner takes a scanner as input to take player inputs.
      */
-    public static void runGame(Scanner scanner) {
-        Scanner sc = scanner;
+    public Game(Scanner scanner) {
+        this.sc = scanner;
 
         // initialize board
         Board board = new Board();

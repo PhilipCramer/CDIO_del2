@@ -44,7 +44,7 @@ public class Board {
      * @return returns the integer effect to be further processed
      */
     public int getFieldEffect(int DiceRollSum){
-        return board[DiceRollSum + 1].getEffect();
+        return board[DiceRollSum - 1].getEffect();
     }
 
     /**
@@ -53,7 +53,7 @@ public class Board {
      * @return returns the action as text corresponding to the field
      */
     public String getFieldText(int DiceRollSum){
-        String name = board[DiceRollSum +1].getName().replace("_", " ").toLowerCase(); //+1 to account for array 0 indexing
+        String name = board[DiceRollSum - 1].getName().replace("_", " ").toLowerCase(); //-1 to account for array 0 indexing
         String str = "You have arrived at " + name;
 
         //checks if the user gains or loses point and changes accordingly
@@ -66,7 +66,7 @@ public class Board {
         }
 
         // Adds the roll again text if user lands at the Werewall
-        if(board[DiceRollSum + 1].getExtraTurn()){
+        if(board[DiceRollSum - 1].getExtraTurn()){
             str += " Roll again.";
         }
         return str;
@@ -78,6 +78,6 @@ public class Board {
      * @return returns a boolean representing if the player receives an extra turn
      */
     public boolean getExtraTurn(int DiceRollSum){
-        return board[DiceRollSum + 1].getExtraTurn();
+        return board[DiceRollSum - 1].getExtraTurn();
     }
 }
