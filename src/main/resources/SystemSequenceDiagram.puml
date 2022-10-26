@@ -1,48 +1,25 @@
-@startuml SystemSequenceDiagram
-title "Game start & first turn"
-actor User
-participant Game
-participant Game
-participant ": Player"
-participant ": Account"
-participant ": DieCup"
-participant ": Dice"
-participant ": Board"
-participant ": Fields"
+@startuml SequenceDiagram
+actor Player1
+actor Player2
+participant DiceGame
 
-User -> Game : Starts game
-Game --> User : Asks for player name
-User -> Game : Writes input
-Game -> ": Player" : Creates Player 
-": Player" -> ": Account" : Creates Account
-Game -> ": DieCup" : Creates Diecup
-": DieCup" -> ": Dice" : Creates Dice
-Game -> ": Board" : Creates Board
-": Board" -> ": Fields" : Creates Fields
-Game --> User : Askes user to throw the dice
-User -> Game : Throws dice
-Game -> ": DieCup" : Asks for total dice value
-": DieCup" -> ": Dice" : Throws Dice
-": Dice" -> ": Dice" : Throws Dice
-": DieCup" -> ": DieCup" : Calculate dice sum
-": DieCup" --> Game : Returns dice sum
-Game -> ": Board" : Moves player
-": Board" -> ": Fields" : Finds effect
-": Fields" --> ": Board" : Returns effect
-": Board" --> Game : Returns effect
-Game -> ": Player" : Send effects
-": Player" -> ": Account" : Changes balance
-Game -> ": Player" : Checks if player has won
-": Player" -> ": Account" : Checks if player has won
-": Account" -> ": Account" : Checks if player has won
-": Account" -> ": Player" : Returns boolean winner check
-": Player" -> Game : Returns boolean winnercheck
-Game -> ": Player" : Asks for new balance
-": Player" -> ": Account" : Retrieves new balance
-": Account" --> ": Player" : Returns new balance
-": Player" --> Game : Returns new balance
-Game -> User : Returns new balance
+Player1 -> DiceGame : Starts Game
+Player1 -> DiceGame : Creates own player
+Player2 -> DiceGame : Creates own player
+loop Until Player hits 3000
+Player1 -> DiceGame : Throws Dice
+DiceGame -> DiceGame : Moves Player
+DiceGame -> DiceGame : Calculates new score
+Player1 <-- DiceGame : Recieves effect
+Player2 -> DiceGame : Throws Dice
+DiceGame -> DiceGame : Moves Player
+DiceGame -> DiceGame : Calculates new score
+Player2 <-- DiceGame : Recieves effect
 
-
+end
+DiceGame -> DiceGame : Calculates winner
+note left
+Announces Winner on screen
+end note
 
 @enduml
