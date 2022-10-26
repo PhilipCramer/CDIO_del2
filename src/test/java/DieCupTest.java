@@ -1,5 +1,6 @@
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DieCupTest {
     private static DieCup diceCup;
@@ -44,5 +45,7 @@ public class DieCupTest {
     @Test
     public void TC5() {
         int sum = diceCup.getTotalValue();
+        System.out.print(sum);
+        assertTrue(true);
     }
 }
