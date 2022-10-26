@@ -1,7 +1,6 @@
 public class DieCup {
     private int[] DiceArray;
     private int DieCount;
-    private  int sum = 0; //The start sum
     //A contructer that makes an Array of int and sets the die count.
     public DieCup(int dieCount) {
         DiceArray = new int[dieCount];
@@ -25,6 +24,8 @@ public class DieCup {
      * @return Total sum of the dice values
      */
     public int getTotalValue() {
+        int sum = 0; //The start sum
+
         //Iterates through each element in DiceArray.
         for (int i : DiceArray) {
             //Adds the dice value to the total sum.
