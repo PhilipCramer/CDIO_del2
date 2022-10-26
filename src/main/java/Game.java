@@ -2,20 +2,23 @@ import java.util.Scanner;
 //imports java scanner
 public class Game {
     //declares a scanner variable
-    Scanner scanner;
+    private Scanner sc;
     
+    private final static int WINNER_SCORE = 3000;
+    private final static int DIE_COUNT = 2;
+
     /**
      * 
      * @param scanner takes a scanner as input to take player inputs.
      */
     public Game(Scanner scanner) {
-        Scanner sc = scanner;
+        this.sc = scanner;
 
         // initialize board
         Board board = new Board();
 
         // initialize dicecup with 2 dice
-        DieCup diceCup = new DieCup(2);
+        DieCup diceCup = new DieCup(DIE_COUNT);
 
         // welcome players, ask for name for player 1
         System.out.println("Welcome!\nPlease enter the name of player one:");
@@ -63,8 +66,8 @@ public class Game {
             currentPlayer.setPlayerBalance(board.getFieldEffect(diceCup.getTotalValue()));
 
             // check if player won
-            boolean winner = currentPlayer.checkPlayerBalance();
-            if (winner == true) {
+            boolean isWinner = currentPlayer.checkPlayerBalance(WINNER_SCORE);
+            if (isWinner) {
                 // insert nested if statement, if check for round equality is neccersary
                 if (currentPlayer == p1) {
                     System.out.println(currentPlayer.getPlayerName()
@@ -93,22 +96,24 @@ public class Game {
                     // apply effect
                     currentPlayer.setPlayerBalance(board.getFieldEffect(diceCup.getTotalValue()));
 
-                    if (p2.getPlayerBalance() < 3000) {
+                    if (!p2.checkPlayerBalance(WINNER_SCORE)) {
                         // Tell player one that they've won
                         System.out.println("Congratulations " + p1.getPlayerName() + " you've won!\n"
                                 + p2.getPlayerName() + " loses the game with a balance of " + p2.getPlayerBalance());
-                    } else if (p2.getPlayerBalance() >= 3000) {
+                    } else {
                         // Tell that it is a draw
                         System.out.println("The game is a draw!\n" + p2.getPlayerName()
-                                + " managed to reach the threshold of 3000 on their last turn.");
+                                + " managed to reach the threshold of(WINNER_SCORE) on their last turn.");
                     }
                 }
                 // Tell the player they've won
-                System.out.println(currentPlayer.getPlayerName() + " congratulations, you've won!");
+                System.out.println(currentPlayer.getPlayerName() + " congratulations, your balance is " + currentPlayer.getPlayerBalance() + "!\nYou've won!");
                 break;
             }
+            // Tell the player their new balance
+            System.out.println("Your balance is " + currentPlayer.getPlayerBalance() + "!");
             // check for extra turn
-            if (board.getExtraTurn(diceCup.getTotalValue()) == true) {
+            if (board.getExtraTurn(diceCup.getTotalValue())) {
                 // Tell player they've gotten an extra turn
                 System.out.println(currentPlayer.getPlayerName() + " press enter to throw the dice");
                 if (!start.equals("")) {
@@ -123,6 +128,5 @@ public class Game {
                 currentPlayer = p1;
             }
         }
-        sc.close();
     }
 }

@@ -1,14 +1,14 @@
 public class Account {
-    // start balance: 0
+    // start balance: 1000
     // balance:int
     // addValue(int value)
     // getBalance() :int
     // balanceCheck() : boolean
 
-    int balance;
+    private int balance;
 
     public Account() {
-        balance = 0;
+        balance = 1000;
     }
 
     /**
@@ -22,14 +22,6 @@ public class Account {
     }
 
     /**
-     * Set the balance to an integer
-     * @param _balance sets balance to _balance
-     */
-    public void setBalance(int _balance) {
-        balance = _balance;
-    }
-
-    /**
      * Get balance value
      * @return current balance
      */
@@ -38,10 +30,11 @@ public class Account {
     }
 
     /**
-     * Checks if the balance is 3000 or more
-     * @return Boolean - True if balance is equal to or grater than 3000.
+     * Checks if the balance at least the amount
+     * @param amount - the amount to check against
+     * @return Boolean - True if balance is equal or greater than the amount.
      */
-    public boolean balanceCheck() {
-        return balance >= 3000;
+    public boolean balanceCheck(int amount) {
+        return balance >= amount;
     }
 }
