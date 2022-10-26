@@ -3,7 +3,7 @@ public class Board {
 
 
     //Enumerator containing the desired Field names
-    private enum BoardLayout {
+    enum BoardLayout {
         START (0, false),
         THE_TOWER (250, false),
         THE_CRATER (-100, false),
@@ -32,8 +32,8 @@ public class Board {
     public Board(){
         int i = 0;
         //Iterates over the enumerator instantiating the fields and assigning names
-        for(BoardLayout bL : BoardLayout.values()){
-            board[i] = new Field(bL.name(), bL.effect, bL.extraTurn);
+        for(BoardLayout boardLayout : BoardLayout.values()){
+            board[i] = new Field(boardLayout.name(), boardLayout.effect, boardLayout.extraTurn);
             i++;
         }
     }
