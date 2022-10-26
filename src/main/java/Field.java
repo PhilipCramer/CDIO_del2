@@ -10,9 +10,9 @@ public class Field {
         this.effect = effect;
         this.extraTurn = extraTurn;
     }
-    public String getFieldName(String String){return name;}
+    public String getFieldName(){return name;}
 
-    public Integer getFieldEffect(Integer Int){return effect;}
+    public Integer getFieldEffect(){return effect;}
 
     public Boolean getExtraTurn(){return extraTurn;}
 
