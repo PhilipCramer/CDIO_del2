@@ -5,14 +5,14 @@ public class Board {
     //Enumerator containing the desired Field names
     private enum BoardLayout {
         START (0, false),
-        TOWER (250, false),
-        CRATER (-100, false),
-        PALACE_GATES (100, false),
-        COLD_DESERT (-20, false),
-        WALLED_CITY (180, false),
-        MONASTERY (0, false),
-        BLACK_CAVE (-70, false),
-        HUTS_IN_THE_MOUNTAIN (60, false),
+        THE_TOWER (250, false),
+        THE_CRATER (-100, false),
+        THE_PALACE_GATES (100, false),
+        THE_COLD_DESERT (-20, false),
+        THE_WALLED_CITY (180, false),
+        THE_MONASTERY (0, false),
+        THE_BLACK_CAVE (-70, false),
+        THE_HUTS_IN_THE_MOUNTAIN (60, false),
         THE_WEREWALL (-80, true),
         THE_PIT (-50, false),
         THE_GOLDMINE (650, false);
@@ -33,9 +33,7 @@ public class Board {
         int i = 0;
         //Iterates over the enumerator instantiating the fields and assigning names
         for(BoardLayout bL : BoardLayout.values()){
-            board[i] = new Field();
-            // board[i].setName(bL);
-
+            board[i] = new Field(bL.name(), bL.effect, bL.extraTurn);
             i++;
         }
     }
@@ -46,8 +44,7 @@ public class Board {
      * @return returns the integer effect to be further processed
      */
     public int getFieldEffect(int DiceRollSum){
-        //returns the effect from the field
-        return 0;
+        return board[DiceRollSum - 1].getEffect();
     }
 
     /**
@@ -56,7 +53,7 @@ public class Board {
      * @return returns the action as text corresponding to the field
      */
     public String getFieldText(int DiceRollSum){
-        String name = board[DiceRollSum +1].getName().replace("_", " ").toLowerCase(); //+1 to account for array 0 indexing
+        String name = board[DiceRollSum - 1].getName().replace("_", " ").toLowerCase(); //-1 to account for array 0 indexing
         String str = "You have arrived at " + name;
 
         //checks if the user gains or loses point and changes accordingly
@@ -69,7 +66,7 @@ public class Board {
         }
 
         // Adds the roll again text if user lands at the Werewall
-        if(DiceRollSum == 10){
+        if(board[DiceRollSum - 1].getExtraTurn()){
             str += " Roll again.";
         }
         return str;
@@ -81,8 +78,6 @@ public class Board {
      * @return returns a boolean representing if the player receives an extra turn
      */
     public boolean getExtraTurn(int DiceRollSum){
-        if(DiceRollSum == 10){
-            return true;
-        }else return false;
+        return board[DiceRollSum - 1].getExtraTurn();
     }
 }
