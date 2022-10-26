@@ -10,6 +10,7 @@ public class Field {
         this.effect = effect;
         this.extraTurn = extraTurn;
     }
+    // A constructor that makes an array of strings, integers and booleans. It also sets the name, effect and extra Turn.
     public String getFieldName(){return name;}
 
     public Integer getFieldEffect(){return effect;}
