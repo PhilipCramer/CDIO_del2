@@ -8,7 +8,6 @@ class "GameControl" as GameControl {
 
 class "Player" as Player {
     playerName : String
-    account : Account
 
     getPlayerName() : String
     setPlayerBalance (int value)
@@ -68,7 +67,7 @@ class "Game" as Game{
 }
 
 
-Player *--> "1" Account
+Player *--> "1" Account : account
 GameControl *--> "1" Game
 Game *--> "2" Player 
 Game *--> "1" Board

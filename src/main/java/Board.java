@@ -3,7 +3,7 @@ public class Board {
 
 
     //Enumerator containing the desired Field names
-    private enum BoardLayout {
+    enum BoardLayout {
         START (0, false),
         THE_TOWER (250, false),
         THE_CRATER (-100, false),
@@ -32,8 +32,8 @@ public class Board {
     public Board(){
         int i = 0;
         //Iterates over the enumerator instantiating the fields and assigning names
-        for(BoardLayout bL : BoardLayout.values()){
-            board[i] = new Field(bL.name(), bL.effect, bL.extraTurn);
+        for(BoardLayout boardLayout : BoardLayout.values()){
+            board[i] = new Field(boardLayout.name(), boardLayout.effect, boardLayout.extraTurn);
             i++;
         }
     }
@@ -44,7 +44,7 @@ public class Board {
      * @return returns the integer effect to be further processed
      */
     public int getFieldEffect(int DiceRollSum){
-        return board[DiceRollSum - 1].getEffect();
+        return board[DiceRollSum - 1].getFieldEffect();
     }
 
     /**
@@ -53,7 +53,7 @@ public class Board {
      * @return returns the action as text corresponding to the field
      */
     public String getFieldText(int DiceRollSum){
-        String name = board[DiceRollSum - 1].getName().replace("_", " ").toLowerCase(); //-1 to account for array 0 indexing
+        String name = board[DiceRollSum - 1].getFieldName().replace("_", " ").toLowerCase(); //-1 to account for array 0 indexing
         String str = "You have arrived at " + name;
 
         //checks if the user gains or loses point and changes accordingly
