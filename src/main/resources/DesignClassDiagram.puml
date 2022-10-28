@@ -1,8 +1,10 @@
 @startuml ClassDiagram
 
 class "GameControl" as GameControl {
-    
+    Scanner : Scanner
+    play : boolean
 
+    Game(Scanner scanner)
 }
 
 class "Player" as Player {
